@@ -1,0 +1,100 @@
+<div class="main">
+  <div class="container-1">
+    <img class="img1" [src]="url" alt="img" width="310px" height="325px">
+    <div class="main-container-1-btn">
+      <input style="display: none;" type="file" (change)="onselectFile($event)" #fileInput>
+      <button id="main-container-1-btn1" (click)="fileInput.click()" type="file" class="btn btn-warning">Edit Photo</button>
+      <button id="main-container-1-btn2" type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Profile</button>
+    </div>
+  </div>
+  <div class="container-2">
+    <p class="container-2-text">
+      I'm <strong>{{homeModelObj.firstname}} {{homeModelObj.lastname}}</strong> and I'm above {{homeModelObj.value}} years and <br>
+      you can send your mails to <strong>{{homeModelObj.email}}</strong>.
+      I live in <strong>{{homeModelObj.state}}</strong> of <strong>{{homeModelObj.country}}</strong>.<br> 
+      I like to play games. And please send newsletters.
+      <br> Please reach out to me on my number <strong>{{homeModelObj.number}}</strong>.
+    </p>
+    <div class="main-div2-btn">
+      <button type="button" (click)="agree()" class="btn btn-success">I Agree</button>
+    </div>
+  </div>
+</div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form style="display: flex;">
+            <!-- <span class="user"><i class="fas fa-user-circle"></i></span>
+            <input style="width: 234px;margin-right: 17px;"
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                (change)="onFileChange($event)"> -->
+            <!-- <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                <div *ngIf="f.file.errors.required">File is required.</div>
+            </div> -->
+            <div>
+              <span class="user"><i class="fas fa-user-circle"></i></span>
+              <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1"> -->
+            </div>
+            <div style="margin-left: 50%;">
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">firstname</label> -->
+                <input matInput [(ngModel)]="homeModelObj.firstname" type="text" name="firstname"  class="fadeIn second" placeholder="firstname">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">lastname</label> -->
+                <input matInput [(ngModel)]="homeModelObj.lastname" type="text" name="lastname"  class="fadeIn second" placeholder="lastname">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">email</label> -->
+                <input matInput [(ngModel)]="homeModelObj.email" type="text" name="email"  class="fadeIn second" placeholder="email">
+              </div>
+              <mat-slider
+              #slider
+              thumbLabel
+              [displayWith]="formatLabel"
+              tickInterval="1000"
+              step="1"
+              min="0"
+              max="100"
+              aria-label="units" [(ngModel)]="homeModelObj.value" [ngModelOptions]="{standalone: true}"></mat-slider>
+              <p>Age :{{homeModelObj.value}}</p>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">number</label> -->
+                <input matInput [(ngModel)]="homeModelObj.number" type="text" name="number"  class="fadeIn second" placeholder="number">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">state</label> -->
+                <input matInput [(ngModel)]="homeModelObj.state" type="text" name="state"  class="fadeIn second" placeholder="state">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">country</label> -->
+                <input matInput [(ngModel)]="homeModelObj.country" type="text" name="country"  class="fadeIn second" placeholder="country">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">address</label> -->
+                <input matInput [(ngModel)]="homeModelObj.address" type="text" name="address"  class="fadeIn second" placeholder="address">
+              </div>
+            </div>
+          </form>
+        </div>
+
+  </div>
+  <div class="modal-footer">
+    <!-- <button id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+    <button type="button" class="btn btn-primary" >Cancel</button>
+    <button type="button" (click)="updateDetails()" class="btn btn-primary" >Submit</button>
+  </div>
+</div>
+</div>
+</div>

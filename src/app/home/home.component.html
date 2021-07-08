@@ -1,0 +1,180 @@
+<div class="main-container">
+  <div class="main">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">DemoApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul id="nav1" class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">Jobs</a>
+            </li>
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">Clients</a>
+            </li>
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">Employers</a>
+            </li>
+            <li class="nav-item">
+              <a id="text-color" class="nav-link active" aria-current="page" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="main-div">
+      <h3 class="main-div-text">I'm looking for...</h3>
+    </div>
+    
+    <div class="main-div2">
+      <div class="main-div2-fields">
+        <input class="form-control me-2" type="search" placeholder="Enter a job description" aria-label="Search">
+        <button id="main-div2-btn" class="btn btn-outline-success" type="submit"><span class="main-div2-btn-icon"><i class="fas fa-search"></i></span>Search</button>
+      </div>
+      <span class="main-div2-span">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label id="text-color" class="form-check-label" for="exampleCheck1">full time</label>
+        </div>
+        <div id="main-div2-span-checkbox2" class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label id="text-color" class="form-check-label" for="exampleCheck1">Part Time / Casual / Free Lance</label>
+        </div>
+        <div class="dropdown">
+          <button id="dropdown-btn" type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+            Select your location
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Mumbai</a>
+            <a class="dropdown-item" href="#">Karnataka</a>
+            <a class="dropdown-item" href="#">Others</a>
+          </div>
+        </div>
+      </span>
+      <div class="main-div2-btn">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+      </div>
+
+      <div class="three-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>  
+  </div>
+  
+  <div class="main2">
+    <p class="main2-text1">We're leaders in</p>
+    <p class="main2-text2">Creative Digital Recruitment</p>
+    <hr />
+    <article class="main2-article">Based in Sury Hills, the creative hub of Sydeny we are surrounded by creativity <br>
+      and that reflects on the type of jobs we recruit for.
+    </article>
+    <button id="main2-btn" class="btn btn-outline-success" type="submit">Find Out More About Us!</button>
+  </div>
+
+  <div class="main3">
+    <p class="main3-text1">Subscribe to our Job Seeker Mailing List</p>
+    <span style="display: flex;">
+      <span class="main3-text1-icon" ><i class="far fa-envelope"></i></span><input id="main3-input" type="text" class="form-control" aria-label="Small" placeholder="Enter your Email Adress" aria-describedby="inputGroup-sizing-sm" >
+    </span>
+  </div>
+
+  <div class="main4">
+    <p class="main4-text"><span  class="main4-text-icon"><i class="far fa-envelope"></i></span>hello@2bytes.au</p>
+    <span class="main4-span">
+      <p class="main4-span-text">Copyright @ 2014 Two Bytes Consulting <strong>Terms & Policies.</strong></p>
+      <span class="main4-span-btn">
+        <button id="main4-span-btn-1" type="button" class="btn btn-secondary"  data-toggle="tooltip" data-placement="right" title="692"><i class="fab fa-twitter"></i>tweet</button>
+        <button id="main4-span-btn-2" type="button" class="btn btn-secondary"  data-toggle="tooltip" data-placement="right" title="172"><i class="fab fa-facebook-square"></i>Likes</button>
+      </span>
+    </span>
+  </div>
+  
+</div>
+
+
+                <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <form style="display: flex;">
+            <div>
+              <span class="user"><i class="fas fa-user-circle"></i></span><br>
+                <input style="font-size: 13px;" type="file" (change)="onselectFile($event)" #fileInput>
+                <!-- <button id="fileInputbtn" (click)="fileInput.click()" type="file" class="btn btn-warning">Upload Photo</button> -->
+            </div>
+            <div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">firstname</label> -->
+                <input matInput [(ngModel)]="homeModelObj.firstname" type="text" name="firstname"  class="fadeIn second" placeholder="firstname">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">lastname</label> -->
+                <input matInput [(ngModel)]="homeModelObj.lastname" type="text" name="lastname"  class="fadeIn second" placeholder="lastname">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">email</label> -->
+                <input matInput [(ngModel)]="homeModelObj.email" type="text" name="email"  class="fadeIn second" placeholder="email">
+              </div>
+              <mat-slider
+                #slider
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                step="1"
+                min="0"
+                max="100"
+                aria-label="units" [(ngModel)]="homeModelObj.value" [ngModelOptions]="{standalone: true}"></mat-slider>
+                <p>Age :{{homeModelObj.value}}</p>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">number</label> -->
+                <input matInput [(ngModel)]="homeModelObj.number" type="text" name="number"  class="fadeIn second" placeholder="number">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">state</label> -->
+                <input matInput [(ngModel)]="homeModelObj.state" type="text" name="state"  class="fadeIn second" placeholder="state">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">country</label> -->
+                <input matInput [(ngModel)]="homeModelObj.country" type="text" name="country"  class="fadeIn second" placeholder="country">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">address</label> -->
+                <input matInput [(ngModel)]="homeModelObj.address1" type="text" name="address1"  class="fadeIn second" placeholder="address1">
+              </div>
+              <div class="mb-3">
+                <!-- <label for="exampleInputPassword1" class="form-label">address</label> -->
+                <input matInput [(ngModel)]="homeModelObj.address2" type="text" name="address2"  class="fadeIn second" placeholder="address2">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="modal-footer">
+        <!-- <button id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Close</button>
+        <button type="button" (click)="postDetails()" class="btn btn-primary" >Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+           
